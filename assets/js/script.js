@@ -1,6 +1,6 @@
 var LAT;
 var LON;
-var currentCity = 'denver';
+var currentCity = '';
 var prevInfo = false;
 
 // Update the map using the city name provided by the user in the search bar
@@ -29,6 +29,7 @@ function getData(city) {
     // Note to Cody: We need to dynamically change these 
     // coordinates below using your current location function
 function initMap() {
+  // replace the coordinates on next line with variables from cody's function
   updateMap(29.4241, -98.4936);
 }
 
@@ -156,6 +157,8 @@ function addPlaces(places, map) {
   }
 }
 
+
+// Local Storage Handling
 var historyListEl = document.getElementById('historyListEl');
 var historyArray = [];
 var searchDataObj = {};
