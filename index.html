@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="./assets/js/script.js"></script>
+    <title>Charge On The Go</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -28,6 +30,7 @@
 
         <section id="map-container" class="box">
             <!-- Google Map Goes Here -->
+            <div id="map"></div>
         </section>
 
         <section id="travel-date" class="container">
@@ -54,11 +57,11 @@
         </section>
 
 
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul id="results-list">
-                <!-- Results List Go here in <li> tags -->
-            </ul>
-        </section>
+        <div id="resultsList">
+            <h2>Results</h2>
+            <ul id="places"></ul>
+            <button id="more">Load more results</button>
+        </div>
 
 
         <section id="history" div class="columns is-mobile" class="column is-half">
@@ -83,7 +86,8 @@
             </ul>
         </section>
     </main>
-</body>
+
+
 
 <footer>
 
@@ -94,3 +98,9 @@
             </p>
         </div>
     </footer>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
+    async
+    ></script>
+</body>
+</html>

@@ -13,12 +13,12 @@ function initMap() {
     let getNextPage;
     const moreButton = document.getElementById("more");
   
-    // moreButton.onclick = function () {
-    //   moreButton.disabled = true;
-    //   if (getNextPage) {
-    //     getNextPage();
-    //   }
-    // };
+    moreButton.onclick = function () {
+      moreButton.disabled = true;
+      if (getNextPage) {
+        getNextPage();
+      }
+    };
     
     // Perform a nearby search.
     service.nearbySearch(
