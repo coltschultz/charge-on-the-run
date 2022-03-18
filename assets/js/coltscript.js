@@ -12,6 +12,7 @@ function getData(city) {
   var apiKey = "e9da07741ba3933502e8f95cfbb33359";
 
   var url = baseUrl + "q=" + city + "&appid=" + apiKey;
+
   currentCity = city;
   logSearch();
   fetch(url)
@@ -47,12 +48,12 @@ function updateMap(LAT, LON) {
   let getNextPage;
   const moreButton = document.getElementById("more");
 
-  moreButton.onclick = function () {
-    moreButton.disabled = true;
-    if (getNextPage) {
-      getNextPage();
-    }
-  };
+  // moreButton.onclick = function () {
+  //   moreButton.disabled = true;
+  //   if (getNextPage) {
+  //     getNextPage();
+  //   }
+  // };
 
   // Perform a nearby search.
   places.nearbySearch(
@@ -61,7 +62,7 @@ function updateMap(LAT, LON) {
       if (status !== "OK" || !results) return;
 
       addPlaces(results, map);
-      moreButton.disabled = !pagination || !pagination.hasNextPage;
+      // moreButton.disabled = !pagination || !pagination.hasNextPage;
       if (pagination && pagination.hasNextPage) {
         getNextPage = () => {
           // Note: nextPage will call the same handler function as the initial call

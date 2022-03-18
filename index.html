@@ -29,12 +29,7 @@
            
             <div class="tile is-parent">
                 <article class="tile is-child notification is-dark">
-                  <p class="title">Where are you?</p>
-                  <p class="subtitle">Click to explore</p>
-                  <div class="content">
-                    <!-- Google Map Goes Here -->
-                    MAP CODE
-                  </div>
+                  <div id="map" class="content"></div>
                 </article>
               </div>
             </div>
@@ -68,18 +63,14 @@
         </div>
 
         <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul id="results-list">
+            <ul >
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">Results List </p>
                         <p>Locations of EV Charging Stations
                         </p>
-                        <ul>
+                        <ul id="places">
                             <!-- Results List Go here in <li> tags -->
-                            <li>location 1</li>
-                            <li>location 2</li>
-                            <li>location 3</li>
-                            <li>location 4</li>
                         </ul>
                     </article>
                 </div>
@@ -90,18 +81,14 @@
 
 
         <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul id="results-list">
+            <ul>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">Search History </p>
                         <p>Locations previously searched
                         </p>
-                        <ul>
+                        <ul id="historyListEl">
                             <!-- Search History List Goes here in <li> tags -->
-                            <li>location 1</li>
-                            <li>location 2</li>
-                            <li>location 3</li>
-                            <li>location 4</li>
                         </ul>
                     </article>
                 </div>
