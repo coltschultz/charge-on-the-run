@@ -8,6 +8,7 @@ var prevInfo = false;
     // on the Search Button. The event listener should take the city name entered in
     // the search bar and pass it as the "city" argument in the getData function.
 function getData(city) {
+
   var baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
   var apiKey = "e9da07741ba3933502e8f95cfbb33359";
 
@@ -95,7 +96,9 @@ function addPlaces(places, map) {
       });
 
       const li = document.createElement("li");
-
+      const searchButton = document.getElementById('searchButton');
+      const searchBar = document.getElementById('searchBar')
+      
       var request = {
         placeId: place.place_id,
         fields: [
@@ -198,6 +201,13 @@ var logSearch = function() {
   newEl.textContent = cityUpper;
   historyListEl.insertBefore(newEl, historyListEl.firstChild);
 }
+searchButton.addEventListener("click", 
+function(event){
+  event.preventDefault();
+  historyListEl.innerHTML = "";
+  getData(searchBar.value)});
+
+
 
 // Cody: Need to add event listener for the history list that 
 // passes the clicked cities name through the getData(); function
