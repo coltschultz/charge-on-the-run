@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>charge-on-the-run</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-</head>
-
-<body>
-    <main>
-        <section class="hero is-success is-halfheight">
-            <div class="hero-body">
-                <div class="">
-                    <p class="title">
-                        Charge on the Go
-                    </p>
-                    <p class="subtitle">
-                        Half height subtitle
-                    </p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>charge-on-the-run</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    
+    <body>
+        <main>
+            <section class="hero is-success is-halfheight">
+                <div class="hero-body">
+                    <div class="">
+                        <p class="title">
+                            Charge on the run
+                        </p>
+                        <p class="subtitle">
+                            Half height subtitle
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <h1 class="title">Charge On The Go</h1>
+            </section>
+            <h1 class="title">Charge On The Run</h1>
+            <!-- button place holder for current location -->
+            <section class="location">
+                <h2>Your current location</h2>
+                <p id="demo"></p>
+            </section>
+            
 
-        <section id="map-container" class="box">
-            <!-- Google Map Goes Here -->
-        </section>
-
-        <section id="travel-date" class="container">
-            <div label class="label" class="columns is-mobile">Travel Date:</label>
-                <div class="container">
-                    <!-- Travel Date Dropdown Here -->
-                    <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2022-03-16"
+            <section id="map-container" class="box">
+                <!-- Google Map Goes Here -->
+            </section>
+            
+            <section id="travel-date" class="container">
+                <div label class="label" class="columns is-mobile">Travel Date:</label>
+                    <div class="container">
+                        <!-- Travel Date Dropdown Here -->
+                        <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2022-03-16"
                         max="2022-12-31">
-                </div>
+                    </div>
         </section>
 
         <section id="search" div class="container">
@@ -83,10 +89,6 @@
             </ul>
         </section>
     </main>
-</body>
-
-<footer>
-
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
@@ -94,3 +96,6 @@
             </p>
         </div>
     </footer>
+    <script src="./assets/js/script.js"></script>
+    </body>
+
