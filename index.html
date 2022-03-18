@@ -5,74 +5,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <title>Charge On The Go</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Charge on the Run</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css">
 </head>
 
 <body>
     <main>
-        <section class="hero is-success is-halfheight">
+        <section class="hero is-large is-info">
             <div class="hero-body">
-                <div class="">
-                    <p class="title">
-                        Charge on the Go
-                    </p>
-                    <p class="subtitle">
-                        Half height subtitle
-                    </p>
-                </div>
+                <p class="title">
+                    Charge on the Run
+                </p>
+                <p class="">
+                    For your electric vehicle charging needs
+                </p>
             </div>
         </section>
-        <h1 class="title">Charge On The Go</h1>
+        <h1 class="title">Charge On The Run</h1>
 
-        <section id="map-container" class="box">
-            <!-- Google Map Goes Here -->
-            <div id="map"></div>
+        <section id="map-container" class="box" class="container">
+           
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-dark">
+                  <p class="title">Where are you?</p>
+                  <p class="subtitle">Click to explore</p>
+                  <div class="content">
+                    <!-- Google Map Goes Here -->
+                    MAP CODE
+                  </div>
+                </article>
+              </div>
+            </div>
         </section>
 
-        <section id="travel-date" class="container">
-            <div label class="label" class="columns is-mobile">Travel Date:</label>
-                <div class="container">
-                    <!-- Travel Date Dropdown Here -->
-                    <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2022-03-16"
-                        max="2022-12-31">
-                </div>
-        </section>
+
 
         <section id="search" div class="container">
             <!-- Search Bar & Search Button Go Here -->
-            <div class="field">
-                <label class="label">Destination</label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="City, State">
+
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <p class="title">Search for your City</p>
+                    <p class="subtitle">Aligned with the right tile</p>
+                    <div class="content">
+
+                        <div class="field">
+                            <label class="label">Enter your city </label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="City, State">
+                            </div>
+                            <p class="help">Where are you traveling to?</p>
+                        </div>
+                        <button class="button">
+                            Search
+                        </button>
+        </section>
+        </div>
+        </article>
+        </div>
+        </div>
+
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul id="results-list">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Results List </p>
+                        <p>Locations of EV Charging Stations
+                        </p>
+                        <ul>
+                            <!-- Results List Go here in <li> tags -->
+                            <li>location 1</li>
+                            <li>location 2</li>
+                            <li>location 3</li>
+                            <li>location 4</li>
+                        </ul>
+                    </article>
                 </div>
-                <p class="help">Where are you traveling to?</p>
-            </div>
-            <button class="button">
-                Search
-            </button>
+                </div>
+            </ul>
         </section>
 
 
-        <div id="resultsList">
-            <h2>Results</h2>
-            <ul id="places"></ul>
-            <button id="more">Load more results</button>
-        </div>
+
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul id="results-list">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Search History </p>
+                        <p>Locations previously searched
+                        </p>
+                        <ul>
+                            <!-- Search History List Goes here in <li> tags -->
+                            <li>location 1</li>
+                            <li>location 2</li>
+                            <li>location 3</li>
+                            <li>location 4</li>
+                        </ul>
+                    </article>
+                </div>
+                </div>
+            </ul>
+        </section>
 
         
 
-        <section id="history" div class="columns is-mobile" class="column is-half">
-            <ul id="historyListEl">
-                <h1>Search History</h1>
-                <li>a</li>
-                </ul>
-                <!-- Search History Goes Here -->
-                
-        </section>
     </main>
 
 
@@ -82,7 +120,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Charge on the Go</strong> by Cody Murray, Krystal Tuttle, and Colt Schultz,
+                <strong>Charge on the Run</strong> by Cody Murray, Krystal Tuttle, and Colt Schultz,
             </p>
         </div>
     </footer>
