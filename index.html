@@ -45,7 +45,7 @@
                     <p class="title">Search for your City</p>
                     <p class="subtitle">Aligned with the right tile</p>
                     <div class="content">
-
+                        <form>
                         <div class="field">
                             <label class="label">Enter your city </label>
                             <div class="control">
@@ -53,9 +53,8 @@
                             </div>
                             <p class="help">Where are you traveling to?</p>
                         </div>
-                        <button class="button">
-                            Search
-                        </button>
+                        <input id="searchButton" type="submit" class="button" value="Search">
+                    </form>
         </section>
         </div>
         </article>
@@ -78,8 +77,6 @@
             </ul>
         </section>
 
-
-
         <section id="results" div class="columns is-mobile" class="column is-half">
             <ul>
                 <div class="tile is-parent">
@@ -96,13 +93,7 @@
             </ul>
         </section>
 
-        
-
     </main>
-
-
-
-<footer>
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -111,6 +102,7 @@
             </p>
         </div>
     </footer>
+
     <script src="./assets/js/coltscript.js"></script>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
