@@ -29,12 +29,7 @@
            
             <div class="tile is-parent">
                 <article class="tile is-child notification is-dark">
-                  <p class="title">Where are you?</p>
-                  <p class="subtitle">Click to explore</p>
-                  <div class="content">
-                    <!-- Google Map Goes Here -->
-                    MAP CODE
-                  </div>
+                  <div id="map" class="content"></div>
                 </article>
               </div>
             </div>
@@ -50,7 +45,7 @@
                     <p class="title">Search for your City</p>
                     <p class="subtitle">Aligned with the right tile</p>
                     <div class="content">
-
+                        <form>
                         <div class="field">
                             <label class="label">Enter your city </label>
                             <div class="control">
@@ -58,9 +53,8 @@
                             </div>
                             <p class="help">Where are you traveling to?</p>
                         </div>
-                        <button class="button">
-                            Search
-                        </button>
+                        <input id="searchButton" type="submit" class="button" value="Search">
+                    </form>
         </section>
         </div>
         </article>
@@ -68,18 +62,14 @@
         </div>
 
         <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul id="results-list">
+            <ul >
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">Results List </p>
                         <p>Locations of EV Charging Stations
                         </p>
-                        <ul>
+                        <ul id="places">
                             <!-- Results List Go here in <li> tags -->
-                            <li>location 1</li>
-                            <li>location 2</li>
-                            <li>location 3</li>
-                            <li>location 4</li>
                         </ul>
                     </article>
                 </div>
@@ -87,21 +77,15 @@
             </ul>
         </section>
 
-
-
         <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul id="results-list">
+            <ul>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">Search History </p>
                         <p>Locations previously searched
                         </p>
-                        <ul>
+                        <ul id="historyListEl">
                             <!-- Search History List Goes here in <li> tags -->
-                            <li>location 1</li>
-                            <li>location 2</li>
-                            <li>location 3</li>
-                            <li>location 4</li>
                         </ul>
                     </article>
                 </div>
@@ -109,11 +93,7 @@
             </ul>
         </section>
 
-
     </main>
-</body>
-
-<footer>
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -122,3 +102,11 @@
             </p>
         </div>
     </footer>
+
+    <script src="./assets/js/coltscript.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
+    async
+    ></script>
+</body>
+</html>
