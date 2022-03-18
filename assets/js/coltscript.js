@@ -199,7 +199,5 @@ var logSearch = function() {
   historyListEl.insertBefore(newEl, historyListEl.firstChild);
 }
 
-
-// For later use:
-// var url =
-//             "https://www.google.com/maps/dir/29.5370752,-98.3891968/ChargePoint+Charging+Station,+11005+I-35+Frontage+Rd,+San+Antonio,+TX+78233/@29.5475603,-98.3982677";
+// Cody: Need to add event listener for the history list that 
+// passes the clicked cities name through the getData(); function
