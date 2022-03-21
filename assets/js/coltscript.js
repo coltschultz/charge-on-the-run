@@ -206,7 +206,8 @@ function(event){
   event.preventDefault();
   historyListEl.innerHTML = "";
   getData(searchBar.value)});
-
+  
+  
 
 
 // Cody: Need to add event listener for the history list that 
