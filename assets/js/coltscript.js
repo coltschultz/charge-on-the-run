@@ -78,6 +78,10 @@ function updateMap(LAT, LON) {
 function addPlaces(places, map) {
   const placesList = document.getElementById("places");
 
+  if (placesList.children.length > 0){
+    placesList.innerHTML = ''
+  }
+
   for (const place of places) {
     if (place.geometry && place.geometry.location) {
       const image = {
