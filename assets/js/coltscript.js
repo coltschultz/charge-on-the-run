@@ -14,7 +14,10 @@ function getData(city) {
   var url = baseUrl + "q=" + city + "&appid=" + apiKey;
 
   currentCity = city;
-  logSearch();
+  if (!historyArray.includes(currentCity)) {
+    logSearch();
+  }
+  
   fetch(url)
     .then(function (response) {
       return response.json();
@@ -177,7 +180,7 @@ if (historyArray) {
     }
 }
 else {
-    var decoy = { city: '' }
+    var decoy = '';
     historyArray = [decoy];
 }
 })()
@@ -185,7 +188,7 @@ else {
 // Log new searches into the history
 var logSearch = function() {
   cityUpper = currentCity.toUpperCase();
-  searchDataObj = { city: cityUpper };
+  searchDataObj = cityUpper;
   if (historyArray) {
   historyArray.unshift(searchDataObj);
   }
@@ -197,7 +200,17 @@ var logSearch = function() {
   var newEl = document.createElement("li");
   newEl.textContent = cityUpper;
   historyListEl.insertBefore(newEl, historyListEl.firstChild);
+  
 }
+
+// Handle clicks of history buttons
+$("#historyListEl").on("click", "li", function () {
+  var element = $(this);
+
+  var text = $(this).text().trim();
+
+  getData(text);
+});
 
 // Cody: Need to add event listener for the history list that 
 // passes the clicked cities name through the getData(); function
