@@ -50,9 +50,6 @@ li:nth-child(odd) {
   background-color: #fcfcfc;
 }
 
-.caption {
-  font-color: light white;
-}
 
 .title {
 padding: 50px;
