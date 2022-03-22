@@ -16,14 +16,10 @@
         <section class="hero is-large is-info">
             <div class="hero-body">
                 <p class="title">
-                <div class="bulma-overlay-mixin-parent">
-                    <div class="bulma-overlay-mixin">
-                        Charge on the Run
-                        </p>
-                        <p class="caption">
-                            For your electric vehicle charging needs
-                    </div>
-                </div>
+                    Charge on the Run
+                </p>
+                <p class="">
+                    For your electric vehicle charging needs
                 </p>
             </div>
         </section>
@@ -32,12 +28,12 @@
         </div>
 
         <section id="map-container" class="box" class="container">
-
+           
             <div class="tile is-parent">
                 <article class="tile is-child notification is-dark">
-                    <div id="map" class="content"></div>
+                  <div id="map" class="content"></div>
                 </article>
-            </div>
+              </div>
             </div>
         </section>
 
@@ -45,63 +41,59 @@
 
         <section id="search" div class="container">
             <!-- Search Bar & Search Button Go Here -->
-            <section id="results" div class="columns is-mobile" class="column is-half">
 
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <p class="title">Search for your City</p>
+                    <p class="subtitle">Aligned with the right tile</p>
+                    <div class="content">
+                        <form>
+                        <div class="field">
+                            <label class="label">Enter your city </label>
+                            <div class="control">
+                                <input id="searchBar" class="input" type="text" placeholder="City, State">
+                            </div>
+                            <p class="help">Where are you traveling to?</p>
+                        </div>
+                        <input id="searchButton" type="submit" class="button" value="Search">
+                    </form>
+        </section>
+        </div>
+        </article>
+        </div>
+        </div>
+
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul >
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-success">
-                                <p class="title">Search for your City</p>
-                                <p class="subtitle">Aligned with the right tile</p>
-                                <div class="content">
-                                    <form>
-                                        <div class="field">
-                                            <label class="label">Enter your city </label>
-                                            <div class="control">
-                                                <input class="input" type="text" placeholder="City, State">
-                                            </div>
-                                            <p class="help">Where are you traveling to?</p>
-                                        </div>
-                                        <input id="searchButton" type="submit" class="button" value="Search">
-                                    </form>
-            </section>
-            </div>
-            </article>
-            </div>
-            </div>
+                        <p class="title">Results List </p>
+                        <p>Locations of EV Charging Stations
+                        </p>
+                        <ul id="places">
+                            <!-- Results List Go here in <li> tags -->
+                        </ul>
+                    </article>
+                </div>
+                </div>
+            </ul>
+        </section>
 
-
-            <section id="results" div class="columns is-mobile" class="column is-half">
-                <ul>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Results List </p>
-                            <p>Locations of EV Charging Stations
-                            </p>
-                            <ul id="places">
-                                <!-- Results List Go here in <li> tags -->
-                            </ul>
-                        </article>
-                    </div>
-                    </div>
-                </ul>
-            </section>
-
-            <section id="results" div class="columns is-mobile" class="column is-half">
-                <ul>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Search History </p>
-                            <p>Locations previously searched
-                            </p>
-                            <ul id="historyListEl">
-                                <!-- Search History List Goes here in <li> tags -->
-                            </ul>
-                        </article>
-                    </div>
-                    </div>
-                </ul>
-            </section>
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Search History </p>
+                        <p>Locations previously searched
+                        </p>
+                        <ul id="historyListEl">
+                            <!-- Search History List Goes here in <li> tags -->
+                        </ul>
+                    </article>
+                </div>
+                </div>
+            </ul>
+        </section>
 
     </main>
 
@@ -117,8 +109,9 @@
     <script src="./assets/js/coltscript.js"></script>
     <!-- <script src="./assets/js/Codyscript.js"></script> -->
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
-        async></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
+    async
+    ></script>
 </body>
-
 </html>
+
