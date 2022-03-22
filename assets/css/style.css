@@ -4,6 +4,7 @@
 
 .hero {
   background-image: url("../images/rainbowcar.jpg");
+  display: flex;
 }
 
 #map {
@@ -49,6 +50,20 @@ li:nth-child(odd) {
   background-color: #fcfcfc;
 }
 
-p {
-    color: white;
+.caption {
+  font-color: light white;
+}
+
+.title {
+padding: 50px;
+
+}
+
+.bulma-overlay-mixin {
+  @include overlay(1.5rem);
+  background-color: rgb(75, 221, 173);
+  border-radius: 0.25em;
+  color: white;
+  opacity: 0.9;
+  padding: 1em;
 }
