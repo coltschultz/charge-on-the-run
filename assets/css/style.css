@@ -52,3 +52,12 @@ li:nth-child(odd) {
 p {
     color: white;
 }
+
+.bulma-overlay-mixin {
+  @include overlay(1.5rem);
+  background-color: rgb(84, 206, 236);
+  border-radius: 0.25em;
+  color: white;
+  opacity: 0.9;
+  padding: 1em;
+}
