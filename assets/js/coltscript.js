@@ -72,7 +72,7 @@ function updateMap(LAT, LON) {
   const currentLocation = { lat: LAT, lng: LON };
   const map = new google.maps.Map(document.getElementById("map"), {
     center: currentLocation,
-    zoom: 15,
+    zoom: 11,
     mapId: "8d193001f940fde3",
   });
 
