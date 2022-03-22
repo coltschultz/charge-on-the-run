@@ -78,3 +78,7 @@ section {
   color: red;
   opacity: 1; /* Firefox */
 }
+
+div {
+  border-radius: 0;
+}
