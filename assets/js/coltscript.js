@@ -2,6 +2,7 @@ var LAT;
 var LON;
 var currentCity = '';
 var prevInfo = false;
+var currentPosition = document.getElementById("demo");
 
 // Update the map using the city name provided by the user in the search bar
     // Note to Cody: This is the function that should be tied to the event listener
@@ -27,12 +28,49 @@ function getData(city) {
     });
 }
 
+// codys function 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        currentPosition.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+var longitude = '';
+var latitude = '';
+function showPosition(position) { 
+    console.log(position.coords)
+    // change position.coords.latitude to varible 
+    // currentPosition.innerHTML = "Latitude: " + position.coords.latitude +
+    //     "<br>Longitude: " + position.coords.longitude;
+        longitude = position.coords.longitude;
+        latitude = position.coords.latitude;
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            currentPosition.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            currentPosition.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            currentPosition.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            currentPosition.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+getLocation();
+// updateMap(position);
 // Create The Initial Map
     // Note to Cody: We need to dynamically change these 
     // coordinates below using your current location function
 function initMap() {
   // replace the coordinates on next line with variables from cody's function
-  updateMap(29.4241, -98.4936);
+  updateMap(latitude, longitude);
 }
 
 // Update The Map
@@ -78,6 +116,7 @@ function updateMap(LAT, LON) {
 function addPlaces(places, map) {
   const placesList = document.getElementById("places");
 
+  // added if" to update results list with newest search .bycody 
   if (placesList.children.length > 0){
     placesList.innerHTML = ''
   }
@@ -210,6 +249,8 @@ function(event){
   event.preventDefault();
   historyListEl.innerHTML = "";
   getData(searchBar.value)});
+
+  
   
   
 
