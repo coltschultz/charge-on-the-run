@@ -252,6 +252,7 @@ var currentLocationEl = document.getElementById("currentLocation");
 
 currentLocationEl.addEventListener("click", function () {
   updateMap(latitude, longitude);
+  document.getElementById("map").scrollIntoView();
 });
 
 // Handle Click of View History Button
