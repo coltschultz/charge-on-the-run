@@ -267,6 +267,7 @@ var getStartedEl = document.getElementById('getStarted');
 
 getStartedEl.addEventListener("click", function() {
   document.getElementById("search").scrollIntoView();
+  $("#searchBar").focus();
 });
 
 // Make so it scrolls to map on click of result
