@@ -41,8 +41,8 @@ function getLocation() {
 var longitude = "";
 var latitude = "";
 function showPosition(position) {
-  longitude = position.coords.longitude;
-  latitude = position.coords.latitude;
+  longitude = parseFloat(position.coords.longitude);
+  latitude = parseFloat(position.coords.latitude);
 }
 
 function showError(error) {
