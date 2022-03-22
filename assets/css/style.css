@@ -55,8 +55,8 @@ section {
 }
 
 .button {
-  width: 170px;
-  margin-bottom: 10px;
+  /* width: 170px; */
+  margin-top: auto;
 }
 
 .is-danger {
@@ -71,4 +71,10 @@ section {
 
 .hidden {
   visibility: hidden;
+}
+
+*::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
 }
