@@ -4,10 +4,6 @@ var currentCity = '';
 var prevInfo = false;
 var currentPosition = document.getElementById("demo");
 
-// Update the map using the city name provided by the user in the search bar
-    // Note to Cody: This is the function that should be tied to the event listener
-    // on the Search Button. The event listener should take the city name entered in
-    // the search bar and pass it as the "city" argument in the getData function.
 function getData(city) {
 
   var baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
@@ -67,13 +63,9 @@ function showError(error) {
     }
 }
 getLocation();
-// updateMap(position);
-// Create The Initial Map
-    // Note to Cody: We need to dynamically change these 
-    // coordinates below using your current location function
+
 function initMap() {
-  // replace the coordinates on next line with variables from cody's function
-  updateMap(latitude, longitude);
+  updateMap(0, 0);
 }
 
 // Update The Map
@@ -90,16 +82,9 @@ function updateMap(LAT, LON) {
   let getNextPage;
   const moreButton = document.getElementById("more");
 
-  // moreButton.onclick = function () {
-  //   moreButton.disabled = true;
-  //   if (getNextPage) {
-  //     getNextPage();
-  //   }
-  // };
-
   // Perform a nearby search.
   places.nearbySearch(
-    { location: currentLocation, radius: 500, keyword: "EV charging station" },
+    { location: currentLocation, radius: 5000, keyword: "EV charging station" },
     (results, status, pagination) => {
       if (status !== "OK" || !results) return;
 
@@ -121,9 +106,12 @@ function addPlaces(places, map) {
 
   // added if" to update results list with newest search .bycody 
   if (placesList.children.length > 0){
-    placesList.innerHTML = ''
+    placesList.innerHTML = '';
   }
-
+  if (placesList.length < 1){
+    console.log('no results found');
+    placesList.innerHTML = 'No results found.';
+  }
   for (const place of places) {
     if (place.geometry && place.geometry.location) {
       const image = {
@@ -207,11 +195,10 @@ function addPlaces(places, map) {
   }
 }
 
-
 // Local Storage Handling
 var historyListEl = document.getElementById('historyListEl');
 var historyArray = [];
-var searchDataObj = {};
+var searchDataObj = '';
 
 // Load the prior search history when the page loads
 (function(item) {
@@ -221,7 +208,7 @@ if (historyArray) {
     
     for (var i = 0; i < historyArray.length; i++) {
     var newEl = document.createElement("li")
-    newEl.textContent = historyArray[i].city;
+    newEl.textContent = historyArray[i];
     historyListEl.appendChild(newEl);
     }
 }
@@ -248,16 +235,12 @@ var logSearch = function() {
   historyListEl.insertBefore(newEl, historyListEl.firstChild);
   
 }
+
 searchButton.addEventListener("click", 
 function(event){
   event.preventDefault();
   historyListEl.innerHTML = "";
   getData(searchBar.value)});
-
-  
-  
-  
-
 
 // Handle clicks of history buttons
 $("#historyListEl").on("click", "li", function () {
@@ -268,5 +251,9 @@ $("#historyListEl").on("click", "li", function () {
   getData(text);
 });
 
-// Cody: Need to add event listener for the history list that 
-// passes the clicked cities name through the getData(); function
+// Handle Click of Use Current Location Button
+var currentLocationEl = document.getElementById('currentLocation');
+
+currentLocationEl.addEventListener("click", function() {
+  updateMap(latitude, longitude);
+})
