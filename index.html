@@ -2,107 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Charge on the Run</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <main>
-        <section class="hero is-large is-info">
-            <div class="hero-body">
-                <p class="title">
-                    Charge on the Run
-                </p>
-                <p class="">
-                    For your electric vehicle charging needs
-                </p>
-            </div>
-        </section>
-        <div class="bulma-overlay-mixin-parent">
-            <div class="bulma-overlay-mixin">
-                <div class="title">
-                    <h1>Charge On The Run</h1>
-                </div>
-            </div>
+    <header class="hero is-large is-info">
+        <div class="hero-body">
+            <p class="title">Charge on the Run</p>
+            <p class="">For your electric vehicle charging needs</p>
+            <input id="getStarted" type="button" class="button is-danger" value="Click Here To Get Started">
+                                            
         </div>
+    </header>
+    
+    <main>
+        
+                    <article class="columns tile is-child notification is-info">
 
-        <section id="map-container" class="box" class="container">
-
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-dark">
-                    <div id="map" class="content"></div>
-                </article>
-            </div>
-            </div>
-        </section>
-
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-info">
-
-                        <section id="search" div class="container">
+                        <section id="search" class="column">
                             <!-- Search Bar & Search Button Go Here -->
 
                             <div class="tile is-parent">
                                 <article class="tile is-child notification is-success">
-                                    <p class="title">Search for your City</p>
-                                    <p class="subtitle">Aligned with the right tile</p>
+                                    <p class="title">Search by City</p>
                                     <div class="content">
                                         <form>
                                             <div class="field">
-                                                <label class="label">Enter your city </label>
+                                                <label class="label">Enter a city name</label>
                                                 <div class="control">
-                                                    <input id="searchBar" class="input" type="text"
-                                                        placeholder="City, State">
+                                                    <input id="searchBar" class="input" type="text" placeholder="City">
                                                 </div>
-                                                <p class="help">Where are you traveling to?</p>
                                             </div>
-                                            <input id="searchButton" type="submit" class="button" value="Search">
+                                            <input id="searchButton" type="submit" class="button" value="Submit Search">
                                             <input id="currentLocation" type="button" class="button" value="Use Current Location">
+                                            <input id="viewHistory" type="button" class="button" value="View Search History">
                                         </form>
+                                    </div>
+                                </article>
+                            </div>
                         </section>
-                </div>
+                    </article>
+       
+
+
+        <section id="map-container" class="columns box mapResults" class="container">
+
+            <div class="column tile is-parent">
+                <article class="tile is-child notification is-dark">
+                    <div id="map" class="content"></div>
                 </article>
-                </div>
-                </div>
+            </div>
+            <section class="column">
+                <p class="title">Results List </p>
+                <p>Locations of EV Charging Stations
+                </p>
+                <ul id="places">
+                    <!-- Results List Go here in <li> tags -->
+                </ul>
+            </section>
+            
         </section>
 
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul>
+        <section id="results" div class="columns is-mobile" class="column is-half" style="overflow-y:hidden">
+
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
-                        <p class="title">Results List </p>
-                        <p>Locations of EV Charging Stations
-                        </p>
-                        <ul id="places">
-                            <!-- Results List Go here in <li> tags -->
-                        </ul>
+
                     </article>
                 </div>
-                </div>
-            </ul>
         </section>
 
         <section id="history" div class="columns is-mobile" class="column is-half">
-            <ul>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">Search History </p>
-                        <p>Locations previously searched
-                        </p>
+                        <p>Locations previously searched</p>
                         <ul id="historyListEl">
                             <!-- Search History List Goes here in <li> tags -->
                         </ul>
                     </article>
                 </div>
-                </div>
-            </ul>
         </section>
 
     </main>
@@ -110,17 +95,14 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Charge on the Run</strong> by Cody Murray, Krystal Tuttle, and Colt Schultz,
+                <strong>Charge on the Run</strong> by Cody Murray, Krystal Tuttle, and Colt Schultz
             </p>
         </div>
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/coltscript.js"></script>
-    <!-- <script src="./assets/js/Codyscript.js"></script> -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
-        async></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"></script>
 </body>
 
 </html>

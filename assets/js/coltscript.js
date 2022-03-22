@@ -5,7 +5,8 @@ var prevInfo = false;
 var currentPosition = document.getElementById("demo");
 const searchBar = document.getElementById("searchBar");
 function getData(city) {
-  event.preventDefault();
+  document.getElementById("map").scrollIntoView();
+  
   var baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
   var apiKey = "e9da07741ba3933502e8f95cfbb33359";
 
@@ -40,10 +41,6 @@ function getLocation() {
 var longitude = "";
 var latitude = "";
 function showPosition(position) {
-  console.log(position.coords);
-  // change position.coords.latitude to varible
-  // currentPosition.innerHTML = "Latitude: " + position.coords.latitude +
-  //     "<br>Longitude: " + position.coords.longitude;
   longitude = position.coords.longitude;
   latitude = position.coords.latitude;
 }
@@ -255,6 +252,20 @@ var currentLocationEl = document.getElementById("currentLocation");
 
 currentLocationEl.addEventListener("click", function () {
   updateMap(latitude, longitude);
+});
+
+// Handle Click of View History Button
+var viewHistoryEl = document.getElementById('viewHistory');
+
+viewHistoryEl.addEventListener("click", function() {
+  document.getElementById("history").scrollIntoView();
+});
+
+// Handle Click of Get Started button
+var getStartedEl = document.getElementById('getStarted');
+
+getStartedEl.addEventListener("click", function() {
+  document.getElementById("search").scrollIntoView();
 });
 
 // Make so it scrolls to map on click of result
