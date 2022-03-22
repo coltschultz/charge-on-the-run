@@ -4,9 +4,11 @@ var currentCity = "";
 var prevInfo = false;
 var currentPosition = document.getElementById("demo");
 const searchBar = document.getElementById("searchBar");
+
+// Turn city into coordinates then update the map accordingly
 function getData(city) {
   document.getElementById("map").scrollIntoView();
-  
+
   var baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
   var apiKey = "e9da07741ba3933502e8f95cfbb33359";
 
@@ -30,7 +32,8 @@ function getData(city) {
     });
 }
 
-// codys function
+// Codys function
+// Get the User's Current Location
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -232,6 +235,7 @@ var logSearch = function () {
   historyListEl.insertBefore(newEl, historyListEl.firstChild);
 };
 
+// Handle clicks of search button
 searchButton.addEventListener("click", function (event) {
   event.preventDefault();
   places.innerHTML = "";
@@ -256,19 +260,16 @@ currentLocationEl.addEventListener("click", function () {
 });
 
 // Handle Click of View History Button
-var viewHistoryEl = document.getElementById('viewHistory');
+var viewHistoryEl = document.getElementById("viewHistory");
 
-viewHistoryEl.addEventListener("click", function() {
+viewHistoryEl.addEventListener("click", function () {
   document.getElementById("history").scrollIntoView();
 });
 
 // Handle Click of Get Started button
-var getStartedEl = document.getElementById('getStarted');
+var getStartedEl = document.getElementById("getStarted");
 
-getStartedEl.addEventListener("click", function() {
+getStartedEl.addEventListener("click", function () {
   document.getElementById("search").scrollIntoView();
   $("#searchBar").focus();
 });
-
-// Make so it scrolls to map on click of result
-// Make sure results show on map on click of history
