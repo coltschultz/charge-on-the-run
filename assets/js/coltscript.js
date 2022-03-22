@@ -3,7 +3,7 @@ var LON;
 var currentCity = '';
 var prevInfo = false;
 var currentPosition = document.getElementById("demo");
-
+const searchBar = document.getElementById('searchBar');
 function getData(city) {
 
   var baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
@@ -12,6 +12,7 @@ function getData(city) {
   var url = baseUrl + "q=" + city + "&appid=" + apiKey;
 
   currentCity = city;
+  currentCity = currentCity.toUpperCase();
   if (!historyArray.includes(currentCity)) {
     logSearch();
   }
@@ -84,7 +85,7 @@ function updateMap(LAT, LON) {
 
   // Perform a nearby search.
   places.nearbySearch(
-    { location: currentLocation, radius: 5000, keyword: "EV charging station" },
+    { location: currentLocation, radius: 50000, keyword: "EV charging station" },
     (results, status, pagination) => {
       if (status !== "OK" || !results) return;
 
@@ -108,10 +109,7 @@ function addPlaces(places, map) {
   if (placesList.children.length > 0){
     placesList.innerHTML = '';
   }
-  if (placesList.length < 1){
-    console.log('no results found');
-    placesList.innerHTML = 'No results found.';
-  }
+
   for (const place of places) {
     if (place.geometry && place.geometry.location) {
       const image = {
@@ -131,7 +129,7 @@ function addPlaces(places, map) {
 
       const li = document.createElement("li");
       const searchButton = document.getElementById('searchButton');
-      const searchBar = document.getElementById('searchBar')
+
       
       var request = {
         placeId: place.place_id,
@@ -257,3 +255,6 @@ var currentLocationEl = document.getElementById('currentLocation');
 currentLocationEl.addEventListener("click", function() {
   updateMap(latitude, longitude);
 })
+
+// Make so it scrolls to map on click of result
+// Make sure results show on map on click of history
