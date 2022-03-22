@@ -48,7 +48,7 @@
 
 ### THEN a weather icon depicting the weather type is presented, with curent temp and hourly forecast
 
-![alt text](Readme%20screenshot%20place%20holder%20.png "Screenshot")
+![Screenshot](screenshot.png "Screenshot")
 
 [Github repository](https://github.com/coltschultz/charge-on-the-run)
 
