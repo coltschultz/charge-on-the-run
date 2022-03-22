@@ -1,124 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Charge on the Run</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css">
-</head>
-
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="hero is-medium is-info">
+      <div class="hero-body">
+        <p class="title">Charge on the Run</p>
+        <p class="">Quickly Find EV Charging Stations</p>
+        <input
+          id="getStarted"
+          type="button"
+          class="button is-danger"
+          value="Get Started"
+        />
+      </div>
+    </header>
     <main>
-        <section class="hero is-large is-info">
-            <div class="hero-body">
-                <p class="title">
-                    Charge on the Run
-                </p>
-                <p class="">
-                    For your electric vehicle charging needs
-                </p>
+
+        <section id="search" class="column">
+            <div class="tile is-child notification is-success">
+              <div class="content">
+                <!-- Search Bar -->
+                <form>
+                 <div class="columns">
+                     <div class="column is-two-fifths">
+                        <input
+                            id="searchBar"
+                            class="input"
+                            type="text"
+                            placeholder="Enter A City Name"
+                        />
+                    </div>
+                  <!-- Buttons -->
+                  <div class="column is-one-fifth">
+                  <input
+                    id="searchButton"
+                    type="submit"
+                    class="button is-fullwidth"
+                    value="Submit Search"
+                  />
+                  </div>
+                  <div class="column is-one-fifth">
+                  <input
+                    id="currentLocation"
+                    type="button"
+                    class="button is-fullwidth"
+                    value="Use My Location"
+                  />
+                  </div>
+                  <div class="column is-one-fifth">
+                  <input
+                    id="viewHistory"
+                    type="button"
+                    class="button is-fullwidth"
+                    value="Search History"
+                  />
+                  </div>
+                  </div>
+                </form>
+              </div>
             </div>
         </section>
-        <div class="bulma-overlay-mixin-parent">
-            <div class="bulma-overlay-mixin">
-                <div class="title">
-                    <h1>Charge On The Run</h1>
-                </div>
-            </div>
+
+      <!-- Map & Results Section -->
+      <section
+        id="map-container"
+        class="columns tile is-child"
+      >
+        <!-- Map -->
+        <div class="column tile is-parent">
+          <div id="map" class="content"></div>
         </div>
-
-        <section id="map-container" class="box" class="container">
-
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-dark">
-                    <div id="map" class="content"></div>
-                </article>
-            </div>
-            </div>
-        </section>
-
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-info">
-
-                        <section id="search" div class="container">
-                            <!-- Search Bar & Search Button Go Here -->
-
-                            <div class="tile is-parent">
-                                <article class="tile is-child notification is-success">
-                                    <p class="title">Search for your City</p>
-                                    <p class="subtitle">Aligned with the right tile</p>
-                                    <div class="content">
-                                        <form>
-                                            <div class="field">
-                                                <label class="label">Enter your city </label>
-                                                <div class="control">
-                                                    <input id="searchBar" class="input" type="text"
-                                                        placeholder="City, State">
-                                                </div>
-                                                <p class="help">Where are you traveling to?</p>
-                                            </div>
-                                            <input id="searchButton" type="submit" class="button" value="Search">
-                                        </form>
-                        </section>
-                </div>
-                </article>
-                </div>
-                </div>
-        </section>
-
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-info">
-                        <p class="title">Results List </p>
-                        <p>Locations of EV Charging Stations
-                        </p>
-                        <ul id="places">
-                            <!-- Results List Go here in <li> tags -->
-                        </ul>
-                    </article>
-                </div>
-                </div>
-            </ul>
-        </section>
-
-        <section id="results" div class="columns is-mobile" class="column is-half">
-            <ul>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-info">
-                        <p class="title">Search History </p>
-                        <p>Locations previously searched
-                        </p>
-                        <ul id="historyListEl">
-                            <!-- Search History List Goes here in <li> tags -->
-                        </ul>
-                    </article>
-                </div>
-                </div>
-            </ul>
-        </section>
-
+        <!-- Results -->
+        <div class="column">
+          <p class="title is-4">Results</p>
+          <p>Select a location below to zoom on map</p>
+          <ul id="places">
+            <!-- Results List Go here in <li> tags -->
+          </ul>
+        </div>
+      </section>
+      <!-- History Section -->
+      <section
+        id="history"
+        div
+        class="tile is-child notification is-info"
+        
+      >
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Search History</p>
+            <ul id="historyListEl"></ul>
+          </article>
+        </div>
+      </section>
     </main>
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Charge on the Run</strong> by Cody Murray, Krystal Tuttle, and Colt Schultz,
-            </p>
-        </div>
+      <div class="content has-text-centered">
+        <p>
+          <strong>Charge on the Run</strong> by Cody Murray, Krystal Tuttle, and
+          Colt Schultz
+        </p>
+      </div>
     </footer>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/coltscript.js"></script>
-    <!-- <script src="./assets/js/Codyscript.js"></script> -->
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
-        async></script>
-</body>
-
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIOZ2gT9JhNh8gsKT0hX4l-8bh5338aNs&callback=initMap&libraries=places&v=weekly"
+    ></script>
+  </body>
 </html>
