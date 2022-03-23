@@ -16,19 +16,19 @@
         <section class="hero is-large is-info">
             <div class="hero-body">
                 <p class="title">
-                <div class="bulma-overlay-mixin-parent">
-                    <div class="bulma-overlay-mixin">
-                        Charge on the Run
-                        </p>
-                        <p class="caption">
-                            For your electric vehicle charging needs
-                    </div>
-                </div>
+                    Charge on the Run
+                </p>
+                <p class="">
+                    For your electric vehicle charging needs
                 </p>
             </div>
         </section>
-        <div class="title">
-            <h1>Charge On The Run</h1>
+        <div class="bulma-overlay-mixin-parent">
+            <div class="bulma-overlay-mixin">
+                <div class="title">
+                    <h1>Charge On The Run</h1>
+                </div>
+            </div>
         </div>
 
         <section id="map-container" class="box" class="container">
@@ -41,67 +41,68 @@
             </div>
         </section>
 
-
-
-        <section id="search" div class="container">
-            <!-- Search Bar & Search Button Go Here -->
-            <section id="results" div class="columns is-mobile" class="column is-half">
-
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-success">
-                                <p class="title">Search for your City</p>
-                                <p class="subtitle">Aligned with the right tile</p>
-                                <div class="content">
-                                    <form>
-                                        <div class="field">
-                                            <label class="label">Enter your city </label>
-                                            <div class="control">
-                                                <input class="input" type="text" placeholder="City, State">
+
+                        <section id="search" div class="container">
+                            <!-- Search Bar & Search Button Go Here -->
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-success">
+                                    <p class="title">Search for your City</p>
+                                    <p class="subtitle">Aligned with the right tile</p>
+                                    <div class="content">
+                                        <form>
+                                            <div class="field">
+                                                <label class="label">Enter your city </label>
+                                                <div class="control">
+                                                    <input id="searchBar" class="input" type="text"
+                                                        placeholder="City, State">
+                                                </div>
+                                                <p class="help">Where are you traveling to?</p>
                                             </div>
-                                            <p class="help">Where are you traveling to?</p>
-                                        </div>
-                                        <input id="searchButton" type="submit" class="button" value="Search">
-                                    </form>
-            </section>
-            </div>
-            </article>
-            </div>
-            </div>
+                                            <input id="searchButton" type="submit" class="button" value="Search">
+                                        </form>
+                        </section>
+                </div>
+                </article>
+                </div>
+                </div>
+        </section>
 
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Results List </p>
+                        <p>Locations of EV Charging Stations
+                        </p>
+                        <ul id="places">
+                            <!-- Results List Go here in <li> tags -->
+                        </ul>
+                    </article>
+                </div>
+                </div>
+            </ul>
+        </section>
 
-            <section id="results" div class="columns is-mobile" class="column is-half">
-                <ul>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Results List </p>
-                            <p>Locations of EV Charging Stations
-                            </p>
-                            <ul id="places">
-                                <!-- Results List Go here in <li> tags -->
-                            </ul>
-                        </article>
-                    </div>
-                    </div>
-                </ul>
-            </section>
-
-            <section id="results" div class="columns is-mobile" class="column is-half">
-                <ul>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Search History </p>
-                            <p>Locations previously searched
-                            </p>
-                            <ul id="historyListEl">
-                                <!-- Search History List Goes here in <li> tags -->
-                            </ul>
-                        </article>
-                    </div>
-                    </div>
-                </ul>
-            </section>
+        <section id="results" div class="columns is-mobile" class="column is-half">
+            <ul>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Search History </p>
+                        <p>Locations previously searched
+                        </p>
+                        <ul id="historyListEl">
+                            <!-- Search History List Goes here in <li> tags -->
+                        </ul>
+                    </article>
+                </div>
+                </div>
+            </ul>
+        </section>
 
     </main>
 
