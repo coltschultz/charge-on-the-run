@@ -1,4 +1,4 @@
-# EVchargerTracker
+# Charge On The Run
 
 ### This application is designed to aid in the finding of electric vehicle charging stations. With this app you can simply use your current address, or type in your desired location and the application will return a list of nearby electric vehicile charging stations along with a map that displays both locations.
 
@@ -6,19 +6,13 @@
 
 ## User story
 
-...
-
-### AS A EV owner,
+### AS AN Electric Vehicle owner,
 
 ### I WANT to be able to find charging stations by location, and get the weather information for that location.
 
 ### SO THAT I can plan my road trips accordingly
 
-...
-
 ## Acceptance Criteria
-
-....
 
 ### GIVEN a webpage with a search bar, with form inputs
 
@@ -50,6 +44,6 @@
 
 ![Screenshot](./assets/images/screenshot.png "Screenshot")
 
-[Github repository](https://github.com/coltschultz/charge-on-the-run)
+[Github Repository](https://github.com/coltschultz/charge-on-the-run)
 
-[Live Url](https://coltschultz.github.io/charge-on-the-run/)
+[Deployed Code](https://coltschultz.github.io/charge-on-the-run/)
